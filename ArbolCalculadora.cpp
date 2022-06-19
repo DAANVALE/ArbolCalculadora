@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Separate.h"
-
+#include "Nodo.h"
 using namespace std;
 int main()
 {
@@ -16,6 +16,9 @@ int main()
     Separate separariz(separarizquierda.operator_1);
     cout << separariz.Hierarchy();
     cout << endl << separariz.operator_0;
+
+    Nodo* arbol = new Nodo("(5+3)-3+4*20/5");
+    cout << arbol->Calcular();
 
     return 0;
 }

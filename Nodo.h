@@ -4,6 +4,7 @@
 
 #include<iostream>
 #include<string>
+#include"Separate.h"
 
 using namespace std;
 
@@ -13,13 +14,14 @@ public:
 	Nodo(){}
 	Nodo(string S_node);
 
-	Nodo* right; 
-	Nodo* left;
-	string _Node, _Right, _Left, _Operator;
-	double area_Node, area_Right, area_Left;
+	Separate *separar = nullptr;
+	Nodo* right = NULL; 
+	Nodo* left = NULL;
+	string _Node, _Operator;
+	double int_Node;
 
 	Nodo* Agregar(string S_node);
-	string Separar();
+	void Insertar();
 	double Calcular();
 };
 

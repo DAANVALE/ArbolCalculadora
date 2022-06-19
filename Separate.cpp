@@ -52,7 +52,7 @@ string Separate::Suma(){
 	}
 
 	cout << operator_1 << endl << operator_2 << endl << operator_3 << endl;
-	return operator_0;
+	return operator_2;
 }
 
 string Separate::Multiplicacion() {
@@ -92,7 +92,7 @@ string Separate::Multiplicacion() {
 			}
 		}
 	}
-	return operator_0;
+	return operator_2;
 }
 
 string Separate::Parentesis() {
