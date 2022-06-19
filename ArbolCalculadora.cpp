@@ -17,7 +17,7 @@ int main()
     cout << separariz.Hierarchy();
     cout << endl << separariz.operator_0;
 
-    Nodo* arbol = new Nodo("(5+3)-3+4*20/5");
+    Nodo* arbol = new Nodo("(5+3)/2+4*20/5");
     cout << arbol->Calcular();
 
     return 0;
