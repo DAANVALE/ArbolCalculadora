@@ -11,7 +11,6 @@ Nodo::Nodo(string S_node) {
 }
 
 Nodo* Nodo::Agregar(string S_node) {
-
 	Nodo* nuevo_nodo = new Nodo(S_node);
 	return nuevo_nodo;
 }
@@ -25,7 +24,6 @@ void Nodo::Insertar() {
 		_Operator = separar->operator_2;
 	}
 	else {
-		cout << "tope: " << _Node << endl;
 		int_Node = stoi(_Node);
 	}
 }
@@ -45,6 +43,5 @@ double Nodo::Calcular() {
 			int_Node = left->Calcular() / right->Calcular();
 		}
 	}
-	
 	return int_Node;
 }

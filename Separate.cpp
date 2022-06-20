@@ -50,8 +50,6 @@ string Separate::Suma(){
 			}
 		}
 	}
-
-	cout << operator_1 << endl << operator_2 << endl << operator_3 << endl;
 	return operator_2;
 }
 
@@ -125,7 +123,6 @@ string Separate::Parentesis() {
 	}
 	centro[operator_0.length() - 2] = '\0';
 	operator_0 = centro;
-	cout << "leyo parente" << endl;
 	return Hierarchy();
 }
 
@@ -141,7 +138,6 @@ string Separate::Hierarchy() {
 		if (dato[i] == ')') { parentesis_iz--; parentesis_der++; }
 
 		if ((dato[i] == '+' || dato[i] == '-') && parentesis_iz == 0) {
-			cout << "suma" << endl;
 			return Suma();
 		}
 	}
@@ -154,7 +150,6 @@ string Separate::Hierarchy() {
 		if (dato[i] == ')') { parentesis_iz--; parentesis_der++; }
 
 		if ((dato[i] == '*' || dato[i] == '/') && parentesis_iz == 0) {
-			cout << "mul" << endl;
 			return Multiplicacion();
 		}
 	}
@@ -167,7 +162,6 @@ string Separate::Hierarchy() {
 		if (dato[i] == ')') { parentesis_iz--; parentesis_der++; }
 
 		if ((dato[i] == '(' || dato[i] == ')') && parentesis_iz == 0) {
-			cout << "leyo" << operator_0 << endl;
 			return Parentesis();
 		}
 	}

@@ -2,23 +2,45 @@
 #include <string>
 #include "Separate.h"
 #include "Nodo.h"
+
 using namespace std;
+
+void run();
+string eliminarespacios(string);
+
 int main()
 {
-    Separate separar("(5+3)-3+4*20/5");
-    cout << separar.Suma();
-    cout << endl << ":" << separar.operator_1 << endl << ":" << separar.operator_2 << endl << ":" << separar.operator_3 << endl;
-    
-    Separate separarizquierda(separar.operator_1);
-    cout << separarizquierda.Suma();
-    cout << endl << ":" << separarizquierda.operator_1 << endl << ":" << separarizquierda.operator_2 << endl << ":" << separarizquierda.operator_3 << endl;
-
-    Separate separariz(separarizquierda.operator_1);
-    cout << separariz.Hierarchy();
-    cout << endl << separariz.operator_0;
-
-    Nodo* arbol = new Nodo("(5+3)/2+4*20/5");
-    cout << arbol->Calcular();
-
+    run();
     return 0;
+}
+
+string eliminarespacios(string operacion) {
+    char* dato;
+    dato = new char[operacion.length() + 1];
+    char* remplazo;
+    remplazo = new char[operacion.length() + 1];
+    int indice = 0;
+
+    strcpy_s(dato, operacion.length() + 1, operacion.c_str());
+    dato[operacion.length()] = '\0';
+
+    for (int i = 0; i < operacion.length() + 1; i++) {
+        if (dato[i] != ' ') {
+            remplazo[indice] = dato[i];
+            indice++;
+        }
+    }
+
+    remplazo[indice] = '\0';
+    operacion = remplazo;
+    return operacion;
+}
+
+void run() {
+    string operacion;
+    cout << "Ingrese la operacion a realizar: \nvalores permitidos:: + - / * ( )\n";
+    getline(cin, operacion);
+
+    Nodo* arbol = new Nodo(eliminarespacios(operacion));
+    cout << endl << arbol->Calcular() << endl;
 }
